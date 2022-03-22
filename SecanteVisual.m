@@ -4,6 +4,7 @@ while n < maxIteracoes
     r = x1 -(x1 - x0)*f(x1) / (f(x1) - f(x0));
     n = n + 1;
     plot(n,r, '*');
+    hold on;
     yr = f(r);
     if abs(yr) < epsilon
         break;
