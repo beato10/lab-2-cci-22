@@ -4,15 +4,14 @@
 
 function [r,n] = PontoFixo(f, g, x0, epsilon, maxIteracoes)
 n = 0;
-x = x0;
+r = x0;
 while n < maxIteracoes
-    r = g(x);
+    r = g(r);
     n = n + 1;
     yr = f(r);
     if abs(yr) < epsilon
         break;
     end
-    x = r;
 end
 if n >= maxIteracoes
     disp('O número máximo de iterações foi atingido')
