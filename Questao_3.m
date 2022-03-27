@@ -6,7 +6,12 @@ x0 = (a + b)/2;
 %Gráfico da função 
 figure
 fplot(f, [a, b]);
+xlabel('x');
+ylabel('f(x)');
+legend('f(x) = sin(x)');
+title('Gráfico da função f');
 grid on;
+print -dpng -r400 graficoFq3.png
 
 % Cálculo das raízes
 %
@@ -26,7 +31,7 @@ df = 0;
 fprintf('Newton Raphson\n');
 fprintf('Raiz: %f, Iterações: %d, Valor da raiz: %f\n', r, n, f(r));
 % Secante
-[r, n] = Secante(f, a, b, 10^-4, 1000);
+[r, n] = SecanteVisual(f, a, b, 10^-4, 1000);
 fprintf('Secante\n');
 fprintf('Raiz: %f, Iterações: %d, Valor da raiz: %f\n', r, n, f(r));
 

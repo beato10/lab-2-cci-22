@@ -6,7 +6,12 @@ x0 = (a + b)/2;
 %Gráfico da função 
 figure
 fplot(f, [a, b]);
+xlabel('x');
+ylabel('f(x)');
+legend('f(x) = x^3-x^2+10*x-5');
+title('Gráfico da função f');
 grid on;
+print -dpng -r400 graficoFq1.png
 % Função de iteração para o ponto fixo e y(x) = x
 g=@(x)(5-x^3+x^2)/10;
 y=@(x) x;
@@ -14,13 +19,23 @@ figure
 fplot(g, [a, b]);
 hold on
 fplot(y, [a, b]);
+xlabel('x');
+ylabel('f(x)');
+legend('g(x) = (5-x^3+x^2)/10', 'y(x) = x');
+title('Gráfico da função de iteração g e da bissetriz do primeiro quadrante');
 grid on;
+print -dpng -r400 graficoGq1.png
 % Função derivada
 df=@(x) 3*x^2-2*x+10;
 proverDerivada = 1;
 figure
 fplot(df, [a, b]);
+xlabel('x');
+ylabel('df(x)');
+legend('df(x) = 3*x^2-2*x+10');
+title('Gráfico da função derivada de f');
 grid on;
+print -dpng -r400 graficoDFq1.png
 
 % Cálculo das raízes
 %
